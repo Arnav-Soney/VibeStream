@@ -8,8 +8,6 @@ VibeStream is a backend application for streaming music. This repository contain
 - [Installation](#installation)
 - [How to Run](#how-to-run)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Project Structure
 
