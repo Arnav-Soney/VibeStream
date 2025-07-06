@@ -14,23 +14,28 @@ VibeStream is a backend application for streaming music. This repository contain
 ## Project Structure
 
 Here’s an overview of the project structure:
-
+```
 VibeStream/
-├── .gitignore # Git ignore file
-├── .env # Environment configuration file
-├── node_modules/ # Node.js modules (dependencies)
-├── package.json # Project metadata and dependencies
-├── server.js # Main application server file
-├── routes/ # Contains route handling files
-│ ├── api.js
-├── controllers/ # Logic for handling requests
-│ ├── musicController.js
-├── models/ # Data models (e.g., User, Playlist)
-│ ├── user.js
-├── utils/ # Helper functions
-│ ├── auth.js
-└── README.md # Project documentation
-
+├── .gitignore                # Git ignore file
+├── .env                      # Environment configuration file (not pushed to GitHub)
+├── node_modules/             # Node.js modules (dependencies)
+├── package.json              # Project metadata and dependencies
+├── server.js                 # Main application server file
+├── routes/                   # Contains route handling files
+│   └── user.routes.js
+├── controllers/              # Logic for handling requests
+│   └── user.controller.js
+├── models/                   # Data models (e.g., User, Playlist)
+│   └── user.model.js
+│   └── video.model.js
+│   └── subscription.model.js
+├── utils/                    # Helper functions
+│   └── auth.js
+|   └── ApiError.js
+|   └── ApiResponse.js
+|   └── aynchandler.js
+└── README.md                 # Project documentation
+```
 
 - **`.gitignore`**: Specifies files and directories that Git should ignore.
 - **`.env`**: Stores environment variables like API keys, database connections, and other sensitive data. This file is **not pushed to GitHub** for security reasons.
@@ -50,8 +55,38 @@ VibeStream/
 
 ### Steps to Set Up Locally
 
-1. **Clone the repository**:
+1. **Clone the repository :**
 
    ```bash
    git clone https://github.com/Arnav-Soney/VibeStream.git
    cd VibeStream
+   ```
+   
+2. **Install dependencies :**
+
+   ```bash
+   npm install
+   ```
+   
+3. **CCreate .env file :**:
+   - Create a .env file in the root directory and add the required environment variables. Here's an example template:  
+
+   ```bash
+   DATABASE_URL=your-database-url
+   JWT_SECRET=your-jwt-secret
+   PORT=5000
+   ```
+
+### How to Run
+To start the application locally, use the following command: 
+   ```bash
+   npm run dev
+   ```
+
+## Technologies Used
+### Node.js : JavaScript runtime built on Chrome's V8 engine.
+### Express.js : Web framework for building RESTful APIs and handling HTTP requests.
+### MongoDB (optional) : NoSQL database used for storing music, user, and playlist data.
+### JWT (JSON Web Token) : For secure user authentication.
+### NPM : Package manager for installing and managing dependencies.
+
